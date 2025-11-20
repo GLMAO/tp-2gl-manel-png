@@ -5,8 +5,8 @@ import java.util.List;
 
 public class GestionnaireEmploiDuTemps   implements Subject  {
     private List<ICours> listeCours = new ArrayList<>();
-     private List<Observer> observers = new ArrayList<>();
-
+    private List<Observer> observers = new ArrayList<>();
+    private String Changement;
 
 
      @Override
@@ -43,9 +43,9 @@ public class GestionnaireEmploiDuTemps   implements Subject  {
 
     public void setChangement(String string) {
         // TODO Auto-generated method stub
+        this.Changement=string;
         String message = "Changement emploi du temps : " +string ;
         System.out.println(message);
-        notifyObservers(message);
-        throw new UnsupportedOperationException("Unimplemented method 'setChangement'");
-    }
+        notifyObservers(Changement);
+    } 
 }

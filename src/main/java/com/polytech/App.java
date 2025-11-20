@@ -1,5 +1,4 @@
 package com.polytech;
-
 import com.polytech.tp.CoursBuilder;
 import com.polytech.tp.CoursEnLigne;
 import com.polytech.tp.Etudiant;
@@ -7,10 +6,9 @@ import com.polytech.tp.GestionnaireEmploiDuTemps;
 import com.polytech.tp.ICours;
 import com.polytech.tp.Responsable;
 
-/**
- * Hello world!
- *
- */
+
+@SuppressWarnings("all")
+
 public class App 
 {
     public static void main( String[] args )

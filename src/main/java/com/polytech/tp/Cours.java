@@ -1,4 +1,5 @@
 package com.polytech.tp;
+@SuppressWarnings("all")
 
 public class Cours implements ICours {
     private String matiere;
