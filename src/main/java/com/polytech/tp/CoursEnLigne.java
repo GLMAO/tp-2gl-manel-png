@@ -18,7 +18,6 @@ public class CoursEnLigne extends CoursDecorator {
     public double getDuree() {
         // TODO Auto-generated method stub
           return coursDecorated.getDuree();
-        
-  
+    
     };
 }

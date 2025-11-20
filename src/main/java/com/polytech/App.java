@@ -15,27 +15,17 @@ public class App
 {
     public static void main( String[] args )
     {
-       GestionnaireEmploiDuTemps gestionnaire = new GestionnaireEmploiDuTemps();
+       ICours coursBase = new CoursBuilder()
+        .setMatiere("Génie Logiciel")
+        .setEnseignant("Mme Manel")
+        .setSalle("B203")
+        .build();
 
-        Etudiant etu1 = new Etudiant("Amina");
-        Etudiant etu2 = new Etudiant("ines");
-        Responsable resp = new Responsable("Dr. Dupont");
+// Empiler plusieurs décorateurs
+ICours coursEnLigne = new CoursEnLigne(coursBase);
+ICours coursEnLigneAnglais = new CoursEnAnglais(coursEnLigne);
+ICours coursMagistral = new CoursMagistral(coursEnLigneAnglais);
 
-        // Attacher les observateurs
-        gestionnaire.attach(etu1);
-        gestionnaire.attach(etu2);
-        gestionnaire.attach(resp);
-
-        // Créer un cours
-        ICours cours = new CoursBuilder()
-                .setMatiere("Génie Logiciel")
-                .setEnseignant("Mme Manel")
-                .setSalle("B101")
-                .build();
-
-        // Ajouter, modifier, notifier
-        gestionnaire.ajouterCours(cours);
-        gestionnaire.modifierCours(cours, "Changement de salle");
-        gestionnaire.setChangement("Vacances déplacées");
+System.out.println(coursMagistral.getDescription());
     }
 }
